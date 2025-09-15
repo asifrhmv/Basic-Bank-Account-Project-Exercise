@@ -2,14 +2,28 @@ package model;
 
 import exceptions.InsufficientFundsException;
 import exceptions.InvalidAmountException;
+import model.enums.AccountType;
+import model.enums.Currency;
 
 public abstract class BankAccount {
    private int accountNumber;
     private double balance;
+    private AccountType type;
+    private Currency currency;
 
-    public BankAccount(int accountNumber, double balance){
+    public BankAccount(int accountNumber, double balance,AccountType type,Currency currency){
         this.accountNumber=accountNumber;
         this.balance=balance;
+        this.type=type;
+        this.currency=currency;
+    }
+
+    public Currency getCurrency() {
+        return currency;
+    }
+
+    public AccountType getType() {
+        return this.type;
     }
 
     public int getAccountNumber(){

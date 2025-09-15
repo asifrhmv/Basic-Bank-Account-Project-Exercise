@@ -2,10 +2,12 @@ package model;
 
 import exceptions.InsufficientFundsException;
 import exceptions.InvalidAmountException;
+import model.enums.AccountType;
+import model.enums.Currency;
 
 public class SavingsAccount extends BankAccount{
-    public SavingsAccount(int accountNumber, double balance) {
-        super(accountNumber, balance);
+    public SavingsAccount(int accountNumber, double balance, AccountType type, Currency currency) {
+        super(accountNumber, balance,type,currency);
     }
 
     @Override
