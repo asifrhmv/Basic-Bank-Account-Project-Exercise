@@ -21,5 +21,10 @@ if(amount<=0){
     throw new InsufficientFundsException("Mebleg balansdan artiq ola bilmez !");
 }
 this.setBalance(this.getBalance()-amount);
+        TransactionLogger.logTransaction(
+                "Account " + this.getAccountNumber() +
+                        " | Withdraw: " + amount +
+                        " | Balance: " + this.getBalance()
+        );
     }
 }

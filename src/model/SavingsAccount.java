@@ -20,6 +20,11 @@ else if(amount>this.getBalance()){
 }
 else {
     this.setBalance(this.getBalance()-amount);
+    TransactionLogger.logTransaction(
+            "Account " + this.getAccountNumber() +
+                    " | Withdraw: " + amount +
+                    " | Balance: " + this.getBalance()
+    );
 }
     }
 }

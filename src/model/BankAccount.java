@@ -56,6 +56,12 @@ public abstract class BankAccount {
             throw new InvalidAmountException("Deposit meblegi menfi ola bilmez !");
         }
 this.balance+=amount;
+
+        TransactionLogger.logTransaction(
+                "Account " + this.getAccountNumber() +
+                        " | Deposit: " + amount +
+                        " | Balance: " + this.getBalance()
+        );
     }
     public abstract void  withdraw(double amount) throws InvalidAmountException, InsufficientFundsException;
 
